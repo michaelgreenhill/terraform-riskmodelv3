@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "athena:GetWorkGroup",
+                "athena:StartQueryExecution",
+                "athena:GetQueryResultsStream",
+                "athena:GetQueryExecution",
+                "athena:GetQueryResults",
+                "athena:StopQueryExecution",
+                "athena:BatchGetNamedQuery",
+                "athena:GetNamedQuery",
+                "athena:ListTagsForResource",
+                "athena:BatchGetQueryExecution",
+                "athena:ListQueryExecutions",
+                "athena:ListNamedQueries"
+            ],
+            "Resource": "arn:aws:athena:*:*:workgroup/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "athena:GetNamespaces",
+                "athena:GetExecutionEngine",
+                "athena:GetNamespace",
+                "athena:GetExecutionEngines",
+                "athena:GetQueryExecutions",
+                "athena:GetTables",
+                "athena:GetTable",
+                "athena:ListWorkGroups",
+                "athena:RunQuery",
+                "athena:GetCatalogs"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

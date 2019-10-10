@@ -1,0 +1,24 @@
+Resources:
+  RiskModelv3AlphaBuilder:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "${ami}"
+      InstanceInitiatedShutdownBehavior: "terminate"
+      InstanceType: "${ec2_type}"
+      PrivateIpAddress: "${ec2_ip}"
+      SecurityGroupIds: ["${sg}"]
+      SubnetId: "${subnet}"
+      Tags:
+        - Key: "Name"
+          Value: "mim-riskmodel-v3-alpha-builder"
+        - Key: "billing"
+          Value: "riskmodel-v3"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeSize: ${ebs_size}
+            DeleteOnTermination: true
+            VolumeType: "gp2"
+      UserData: 
+        Fn::Base64: !Sub |
+          ${cloud-init}

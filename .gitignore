@@ -1,0 +1,4 @@
+.terraform/*
+terraform.tfstate*
+AWS/lambda_function.zip
+AWS/Lambda/lambda_function.py
